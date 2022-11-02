@@ -28,6 +28,10 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Flutter Appbar"),
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: (){},
+        )
       ),
     );
   }

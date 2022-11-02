@@ -31,7 +31,17 @@ class MyHomePage extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.menu),
           onPressed: (){},
-        )
+        ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: (){},
+        ),
+        IconButton(
+          icon: Icon(Icons.more_vert),
+          onPressed: (){},
+        ),
+        ],
       ),
     );
   }

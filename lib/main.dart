@@ -1,23 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:device_preview/device_preview.dart';
 
-void main() {
-  runApp(ScaffoldClass());
-}
+void main() =>  runApp(
+  DevicePreview(
+    builder: (context) => MyAppBar(),
+  ),
+);
 
-class ScaffoldClass extends StatelessWidget {
+class MyAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Scaffold Widget'),
-        ),
-        body: Center(
-          child: Text(
-            'Nishu Gamage', 
-            style: TextStyle(fontSize: 20.0),
-            ),
-        ),
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
+      title: 'AppBar',
+      theme: ThemeData(
+        primarySwatch: Colors.blue
+      ),
+      home: MyHomePage(),
+      );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+
       ),
     );
   }

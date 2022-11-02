@@ -44,10 +44,9 @@ class MyHomePage extends StatelessWidget {
             onPressed: (){},
           ),
           ],
-          flexibleSpace: Icon(
-            Icons.photo_camera,
-            size: 75.0,
-            color: Colors.white70,
+          flexibleSpace: Image.asset(
+            "assests/back1.jpg", 
+            fit: BoxFit.cover,
           ),
         ),
       ),

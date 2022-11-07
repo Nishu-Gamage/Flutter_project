@@ -28,10 +28,24 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.red[600],
-          title: Text("Flutter"),
+          title: Text("Container Widget"),
         ),
-        body: Container(),
+        body: Container(
+          // margin: EdgeInsets.all(20.0),
+          // padding: EdgeInsets.all(50.0),
+          // transform: Matrix4.rotationZ(0.2),
+          // width: double.infinity,
+          width: 300.0,
+          height: 200.0,
+          alignment: Alignment.bottomRight,
+          color: Colors.amber,
+          child: Text(
+            'Container Widget test', 
+            style: TextStyle(
+              fontSize: 20.0,
+            ),
+          ),
+        ),
       );
   }
 }

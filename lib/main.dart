@@ -11,6 +11,7 @@ class MyAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
       title: 'AppBar',
@@ -42,10 +43,10 @@ class MyHomePage extends StatelessWidget {
               onPressed: () {},
             ),
           ],
-          flexibleSpace: Image.asset(
-            "assests/back1.jpg",
-            fit: BoxFit.cover,
-          ),
+          // flexibleSpace: Image.asset(
+          //   "assests/back1.jpg",
+          //   fit: BoxFit.cover,
+          // ),
           bottom: const TabBar(
             tabs: [
               Tab(icon: Icon(Icons.directions_car), text: 'Tab 1',),
@@ -53,6 +54,8 @@ class MyHomePage extends StatelessWidget {
               Tab(icon: Icon(Icons.directions_bike)),
             ],
           ),
+          elevation: 50.0,
+          backgroundColor: Colors.pink,
         ),
         body: TabBarView(
           children: [

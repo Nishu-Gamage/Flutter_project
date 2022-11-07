@@ -14,10 +14,7 @@ class MyWidgetTest extends StatelessWidget {
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
       title: 'AppBar',
-      theme: ThemeData(
-        brightness: Brightness.dark,
-        primarySwatch: Colors.blue
-      ),
+      theme: ThemeData(brightness: Brightness.dark, primarySwatch: Colors.blue),
       home: MyHomePage(),
     );
   }
@@ -26,12 +23,12 @@ class MyWidgetTest extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.red[600],
-          title: Text("Flutter"),
-        ),
-        body: Container(),
-      );
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.red[600],
+        title: const Text("Flutter"),
+      ),
+      body: Container( ),
+    );
   }
 }

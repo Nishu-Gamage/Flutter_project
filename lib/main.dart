@@ -1,34 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
 
-void main() => runApp(
-      DevicePreview(
-        builder: (context) => MyWidgetTest(),
-      ),
-    );
+void main() {
+  runApp(NishuApp());
+}
 
-class MyWidgetTest extends StatelessWidget {
+class NishuApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      locale: DevicePreview.locale(context),
-      builder: DevicePreview.appBuilder,
-      title: 'AppBar',
-      theme: ThemeData(brightness: Brightness.dark, primarySwatch: Colors.blue),
-      home: MyHomePage(),
+      title: 'Stateful & Stateless',
+      home: HomePage(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red[600],
-        title: const Text("Flutter"),
+        title: Text("Home Method"),
       ),
-      body: Container( ),
+      body: Center(
+        child: Column(),
+      ),
     );
   }
 }

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
 
 void main() {
-  runApp(NishuApp());
+  runApp(NishuApp1());
 }
 
-class NishuApp extends StatelessWidget {
+class NishuApp1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

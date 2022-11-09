@@ -1,14 +1,5 @@
 import 'package:flutter/material.dart';
-
-class NishuApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Stateful & Stateless',
-      home: HomePage(),
-    );
-  }
-}
+import 'package:flutter_project/screens/secound_screen.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -18,7 +9,26 @@ class HomePage extends StatelessWidget {
         title: Text("Flutter Navigation"),
       ),
       body: Center(
-        child: Column(),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Flutter Navigation',
+              style: TextStyle(fontSize: 20.0),
+            )
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).push(MaterialPageRoute(
+            builder:(_){
+              return SecoundScreen();
+            }
+          ));
+        },
+        tooltip: 'Increment',
+        child: Icon(Icons.add),
       ),
     );
   }

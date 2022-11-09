@@ -14,6 +14,9 @@ class NishuApp extends StatelessWidget {
     return MaterialApp(
       title: 'Stateful & Stateless',
       home: HomePage(),
+      routes: <String,WidgetBuilder>{
+        '/secound': (context) => SecoundScreen(),
+      },
     );
   }
 }

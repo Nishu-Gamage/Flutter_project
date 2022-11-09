@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project/screens/appbar.dart';
 
 class SecoundScreen extends StatelessWidget {
-  const SecoundScreen({Key? key}) : super(key: key);
 
+  String displayText = '';
+
+  SecoundScreen(String text){
+    this.displayText = text;
+  } 
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +26,7 @@ class SecoundScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Secound Screen',
+              displayText,
               style: TextStyle(fontSize: 20.0),
             )
           ],

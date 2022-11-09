@@ -21,12 +21,12 @@ class HomePage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Navigator.of(context).push(MaterialPageRoute(
-          //   builder:(_){
-          //     return SecoundScreen();
-          //   }
-          // ));
-          Navigator.of(context).pushNamed('/secound');
+          Navigator.of(context).push(MaterialPageRoute(
+            builder:(_){
+              return SecoundScreen("Nishu Gamage");
+            }
+          ));
+          // Navigator.of(context).pushNamed('/secound');
         },
         tooltip: 'Increment',
         child: Icon(Icons.add),

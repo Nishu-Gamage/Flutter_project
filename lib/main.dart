@@ -43,8 +43,12 @@ class _MyHomePageState extends State<MyHomePage> {
               padding: const EdgeInsets.all(20.0),
               child: TextField(
                 maxLength: 8,
-                // obscureText: true,
-                // keyboardType: TextInputType.number,
+                onSubmitted: (text){
+                  print(text);
+                },
+                // onChanged: (text){
+                //   print(text);
+                // },
                 style: TextStyle(
                   fontSize: 22.0,
                 ),
@@ -53,6 +57,9 @@ class _MyHomePageState extends State<MyHomePage> {
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: TextField(
+                maxLength: 8,
+                // obscureText: true,
+                // keyboardType: TextInputType.number,
                 autofocus: true,
                 // enabled: false,
                 cursorColor: Colors.red,
@@ -63,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   fontSize: 22.0,
                 ),
               ),
-            )
+            ),
           ],
         ),  
       ),

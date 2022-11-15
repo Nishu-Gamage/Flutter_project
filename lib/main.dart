@@ -30,8 +30,15 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  TextEditingController title = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
+
+    title.text = "Nishu Gamage";
+    String test = title.text;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -43,8 +50,10 @@ class _MyHomePageState extends State<MyHomePage> {
               padding: const EdgeInsets.all(20.0),
               child: TextField(
                 maxLength: 8,
+                controller: title,
                 onSubmitted: (text){
                   print(text);
+                  print(test);
                 },
                 // onChanged: (text){
                 //   print(text);

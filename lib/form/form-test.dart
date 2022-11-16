@@ -8,6 +8,11 @@ class Form_Test extends StatefulWidget {
 }
 
 class _FormTestState extends State<Form_Test> {
+
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  String _name;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,14 +20,25 @@ class _FormTestState extends State<Form_Test> {
         title: Text('Flutter - Form'),
       ),
       body: SingleChildScrollView(
-        child: Container(
-          margin: const EdgeInsets.all(24.0),
-          child: Column(
-            children: <Widget>[
-              Container(color: Colors.amber, height: 300,),
-              Container(color: Colors.blue, height: 300,),
-              Container(color: Colors.redAccent, height: 300,),
-            ],
+        child: Form(
+          key: _formKey,
+          child: Container(
+            margin: const EdgeInsets.all(24.0),
+            child: Column(
+              children: <Widget>[
+                TextFormField(
+                  maxLength: 20,
+                  decoration: const InputDecoration(hintText: 'Name'),
+                  maxLines: 2,
+                  validator: (textFieldValue){
+                    return null;
+                  },
+                  onSaved: (textFieldValue){
+                    _name = textFieldValue!;
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),

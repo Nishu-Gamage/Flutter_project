@@ -14,12 +14,16 @@ class _FormTestState extends State<Form_Test> {
       appBar: AppBar(
         title: Text('Flutter - Form'),
       ),
-      body: Container(
-        margin: const EdgeInsets.all(24.0),
-        child: Column(
-          children: <Widget>[
-            
-          ],
+      body: SingleChildScrollView(
+        child: Container(
+          margin: const EdgeInsets.all(24.0),
+          child: Column(
+            children: <Widget>[
+              Container(color: Colors.amber, height: 300,),
+              Container(color: Colors.blue, height: 300,),
+              Container(color: Colors.redAccent, height: 300,),
+            ],
+          ),
         ),
       ),
     );

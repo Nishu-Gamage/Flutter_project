@@ -12,6 +12,22 @@ class _FormTestState extends State<Form_Test> {
 
   String _name = '';
 
+  Widget _buildNameField() {
+    return TextFormField(
+        maxLength: 20,
+        decoration: const InputDecoration(hintText: 'Name'),
+        maxLines: 2,
+        validator: (textFieldValue) {
+          if (textFieldValue!.isEmpty) {
+            return 'Name cannot be empty';
+          }
+          return null;
+        },
+        onSaved: (textFieldValue) {
+          _name = textFieldValue!;
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,19 +41,7 @@ class _FormTestState extends State<Form_Test> {
             margin: const EdgeInsets.all(24.0),
             child: Column(
               children: <Widget>[
-                TextFormField(
-                    maxLength: 20,
-                    decoration: const InputDecoration(hintText: 'Name'),
-                    maxLines: 2,
-                    validator: (textFieldValue) {
-                      if (textFieldValue!.isEmpty) {
-                        return 'Name cannot be empty';
-                      }
-                      return null;
-                    },
-                    onSaved: (textFieldValue) {
-                      _name = textFieldValue!;
-                    }),
+                _buildNameField(),
                 SizedBox(
                   height: 100,
                 ),
@@ -47,7 +51,7 @@ class _FormTestState extends State<Form_Test> {
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           _formKey.currentState?.save();
-                          print(_name);
+                          print('Pressed');
                         }
                       }),
                 )

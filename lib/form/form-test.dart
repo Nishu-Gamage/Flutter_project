@@ -8,10 +8,9 @@ class Form_Test extends StatefulWidget {
 }
 
 class _FormTestState extends State<Form_Test> {
-
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  String _name;
+  String _name = '';
 
   @override
   Widget build(BuildContext context) {
@@ -27,16 +26,31 @@ class _FormTestState extends State<Form_Test> {
             child: Column(
               children: <Widget>[
                 TextFormField(
-                  maxLength: 20,
-                  decoration: const InputDecoration(hintText: 'Name'),
-                  maxLines: 2,
-                  validator: (textFieldValue){
-                    return null;
-                  },
-                  onSaved: (textFieldValue){
-                    _name = textFieldValue!;
-                  },
+                    maxLength: 20,
+                    decoration: const InputDecoration(hintText: 'Name'),
+                    maxLines: 2,
+                    validator: (textFieldValue) {
+                      if (textFieldValue!.isEmpty) {
+                        return 'Name cannot be empty';
+                      }
+                      return null;
+                    },
+                    onSaved: (textFieldValue) {
+                      _name = textFieldValue!;
+                    }),
+                SizedBox(
+                  height: 100,
                 ),
+                Container(
+                  child: ElevatedButton(
+                      child: Text('Save'),
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          _formKey.currentState?.save();
+                          print(_name);
+                        }
+                      }),
+                )
               ],
             ),
           ),
